@@ -1,8 +1,6 @@
 import sys
 import bioread
 
-EXAMPLE_ACQ = "examples/7h.acq"
-
 
 def print_as_table(lines):
     # Convert all values to strings
