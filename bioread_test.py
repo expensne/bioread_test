@@ -20,13 +20,13 @@ def main(args):
     data = bioread.read_file(args[0])
     assert data is not None
 
-    lines = []
+    lines = [["Channel Name", "Length of Data", "Data Min", "Data Max", "Data Sum", "Data Mean"]]
+
     for channel in data.channels:
         name = str(channel.name)
         data = channel.data
 
-        line = [name, len(data), data.min(), data.max(), data.sum(), data.mean()]  # type: ignore
-        lines.append(line)
+        lines.append([name, len(data), data.min(), data.max(), data.sum(), data.mean()]) # type: ignore
 
     print_as_table(lines)
 
